@@ -1,0 +1,14 @@
+services:
+  agent-api:
+    build:
+      context: .
+      target: runtime
+    container_name: langgraph_enterprise_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - ENV=development
+      - LOG_LEVEL=debug
+    restart: always
